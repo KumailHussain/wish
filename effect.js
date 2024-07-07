@@ -23,14 +23,14 @@ $("document").ready(function () {
     const username = $("#username").val();
     const password = $("#password").val();
 
-    if (username === 'sidra' && password === 'PeTrA') {
-    $("#wrapper").hide();
-    $("#container").css("display", "block");
-    $(".container").fadeIn("fast");
-    $("#bannar").show();
-    $("#turn_on").show();
+    if (username === "sidra" && password === "PeTrA") {
+      $("#wrapper").hide();
+      $("#container").css("display", "block");
+      $(".container").fadeIn("fast");
+      $("#bannar").show();
+      $("#turn_on").show();
     } else {
-    	alert('Invalid credentials, you suck doody');
+      alert("Invalid credentials, you suck doody");
     }
   });
   $("#turn_on").click(function () {
@@ -189,7 +189,7 @@ $("document").ready(function () {
       gap6 = 0;
     if (vw <= 500) {
       vw = $(window).width() / 2;
-	  $(".balloons").css("background-size", "60px 100px");
+      $(".balloons").css("background-size", "60px 100px");
       $(".balloons").css("width", "62px");
       gap = vw - 20;
       gap1 = 100;
@@ -279,10 +279,34 @@ $("document").ready(function () {
     // Play the new song
     newAudio.play();
     $("#container").css("display", "none");
-    $("#wrapper2").css("display", "block !important");
-    $(".ballonsP").css("display", "none");
-    $("#wrapper2").fadeIn("slow");
     $("body").removeClass("peach");
+    $(".ballonsP").css("display", "none");
+    var $wrapper2 = $("#wrapper2");
+    var $wrapper3 = $("#wrapper3");
+    var $wrapper4 = $("#wrapper4");
+
+    // Hide container and remove peach class
+    $("#container").css("display", "none");
+    $("body").removeClass("peach");
+    $(".ballonsP").css("display", "none");
+
+    // Fade out current wrapper and fade in next wrapper sequentially
+    setTimeout(function () {
+      $("#wrapper").fadeOut("slow", function () {
+        $wrapper2.fadeIn("slow");
+      });
+    }, 1); // Wait 1 second after hiding container and ballonsP
+
+    setTimeout(function () {
+      $wrapper2.fadeOut("slow", function () {
+        $wrapper3.fadeIn("slow");
+        setTimeout(function () {
+          $wrapper3.fadeOut("slow", function () {
+            $wrapper4.fadeIn("slow");
+          });
+        }, 9000); // Wait 5 seconds after fading in wrapper3
+      });
+    }, 9000); // Wait 3 seconds after fading in wrapper2
   });
 
   $("#adored").click(function () {

@@ -11,10 +11,7 @@ body {
     background-position: right center;
     display: block;
     background-size: cover;
-    height: 100vh;
-}
-.container {
-	display: none;
+    height: 98vh;
 }
 .peach {
 	background-color: #FFDAB9;
@@ -1288,6 +1285,9 @@ audio {
 	text-shadow: 2px 2px 2px #FFF;
 	display: none;
 	font-weight: bold;
+}
+.container {
+	display: none;
 }
 
 #wrapper2 {
