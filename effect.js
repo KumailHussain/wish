@@ -23,15 +23,15 @@ $("document").ready(function () {
     const username = $("#username").val();
     const password = $("#password").val();
 
-    // if (username === 'sidra' && password === 'PeTrA') {
+    if (username === 'sidra' && password === 'PeTrA') {
     $("#wrapper").hide();
     $("#container").css("display", "block");
     $(".container").fadeIn("fast");
     $("#bannar").show();
     $("#turn_on").show();
-    // } else {
-    // 	alert('Invalid username or password');
-    // }
+    } else {
+    	alert('Invalid credentials, you suck doody');
+    }
   });
   $("#turn_on").click(function () {
     $("#bulb_yellow").addClass("bulb-glow-yellow");
