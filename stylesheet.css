@@ -11,7 +11,14 @@ body {
     background-position: right center;
     display: block;
     background-size: cover;
-    height: 98vh;
+    height: 100vh;
+}
+@media (max-height: 880px) {
+    body {
+        background-color: lightblue;
+        font-size: 14px;
+		height: 95vh;
+    }
 }
 .peach {
 	background-color: #FFDAB9;
