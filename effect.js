@@ -17,6 +17,7 @@ $("document").ready(function () {
     $("#b55").animate({ top: 240, left: vw + 50 + gap }, 500);
     $("#b66").animate({ top: 240, left: vw + 150 + gap }, 500);
     $("#b77").animate({ top: 240, left: vw + 250 + gap }, 500);
+    console.log("resize");
   });
   $("#login").click(function () {
     const username = $("#username").val();
@@ -179,17 +180,16 @@ $("document").ready(function () {
   $("#wish_message").click(function () {
     console.log($(window).width());
     vw = $(window).width() / 2;
-    var gap,
-      gap1,
-      gap2,
-      gap3,
-      gap4,
-      gap5,
+    var gap = 0,
+      gap1 = 0,
+      gap2 = 0,
+      gap3 = 0,
+      gap4 = 0,
+      gap5 = 0,
       gap6 = 0;
     if (vw <= 500) {
       vw = $(window).width() / 2;
-      $(".balloons").c
-	  ss("background-size", "60px 100px");
+	  $(".balloons").css("background-size", "60px 100px");
       $(".balloons").css("width", "62px");
       gap = vw - 20;
       gap1 = 100;
@@ -241,13 +241,13 @@ $("document").ready(function () {
     function msgLoop(i) {
       $("p:nth-child(" + i + ")")
         .fadeOut("slow")
-        .delay(10)
+        .delay(500)
         .promise()
         .done(function () {
           i = i + 1;
           $("p:nth-child(" + i + ")")
             .fadeIn("slow")
-            .delay(10);
+            .delay(550);
           if (i == 109) {
             $("p:nth-child(108)")
               .fadeOut("slow")
@@ -267,20 +267,20 @@ $("document").ready(function () {
 
   $("#end").click(function () {
     console.log("clicked..");
-	var currentAudio = $(".song")[0];
-        
-	// Stop the current audio
-	currentAudio.pause();
-	currentAudio.currentTime = 0;
+    var currentAudio = $(".song")[0];
 
-	// Change the source to the new song (assuming we have a second audio element)
-	var newAudio = $(".song")[1];
-	
-	// Play the new song
-	newAudio.play();
+    // Stop the current audio
+    currentAudio.pause();
+    currentAudio.currentTime = 0;
+
+    // Change the source to the new song (assuming we have a second audio element)
+    var newAudio = $(".song")[1];
+
+    // Play the new song
+    newAudio.play();
     $("#container").css("display", "none");
     $("#wrapper2").css("display", "block !important");
-    $(".ballonsP").css("display", "none !important");
+    $(".ballonsP").css("display", "none");
     $("#wrapper2").fadeIn("slow");
     $("body").removeClass("peach");
   });

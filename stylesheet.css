@@ -1,12 +1,17 @@
 body {
 	/*background-color: #FFDAB9;	*/
-	background-color: #000;
+	background-color: white;
 	-webkit-transition:background-color linear 5s;
 	-moz-transition:background-color linear 5s;
 	-o-transition:background-color linear 5s;
 	-ms-transition:background-color linear 5s;
 	transition:background-color linear 5s;
 	overflow-x:hidden;
+	background-image: url(images/bg-registration-form-1.jpg);
+    background-position: right center;
+    display: block;
+    background-size: cover;
+    height: 100vh;
 }
 .container {
 	display: none;
@@ -1326,6 +1331,3 @@ audio {
     }*/
 
 
-	.ballonsP {
-		zoom: -1;
-	}
